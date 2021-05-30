@@ -116,7 +116,7 @@ console.log(newFruits)
 
 /*
  Destructing Object
-*/
+
 
 // let fullName = {
 //     firstName: "Andrew",
@@ -145,4 +145,33 @@ let [newUser, setUser] = user;
 console.log(newUser);
 
 // calling the setUser which fired off this (user) => function
-setUser({ firstName: "John", lastName: "Reilly"})
+setUser({ firstName: "John", lastName: "Reilly"})  
+
+*/
+
+
+/*
+    Promises
+*/
+
+let promise = new Promise((resolve, reject) =>{
+    setTimeout(() => {
+        // resolve({
+        //     firstName: "Andrew",
+        //     lastName: "Sapalaran"
+        // });
+
+        reject("Something went wrong");
+    }, 1000);
+})
+
+// This `.then` only runs if it success or resolves
+// `.catch` runs if it rejects
+promise.then((response) => {
+    console.log("Here is the response after 1 second: ");
+    console.log(response);
+}).catch((error) => {
+    console.log(error)
+})
+
+console.log("This is part 1")
