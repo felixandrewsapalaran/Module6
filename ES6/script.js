@@ -69,7 +69,7 @@ sortBy("Date", []); //Passed in `Date` as value
 
 /*
     Iterating
-*/
+
 
 let fruits = ["apple", "banana", "orange", "cherries", "jackfruit", "guava"];
 // console.log("For Loop");
@@ -110,3 +110,39 @@ newFruits = fruits.map((fruit) => {
 })
 
 console.log(newFruits)
+
+*/
+
+
+/*
+ Destructing Object
+*/
+
+// let fullName = {
+//     firstName: "Andrew",
+//     lastName: "Sapalaran"
+// }
+
+// const { firstName, lastName } = fullName;
+// console.log(firstName);
+// console.log(lastName);
+
+
+let user = [
+    {
+        firstName: "Default",
+        lastName: "User"
+    },
+
+    (user) => {
+        console.log("I set the user: ", user);
+    }
+]
+
+// newUser get sets to the first object
+// setUser get sets to this function (user) =>{}
+let [newUser, setUser] = user;
+console.log(newUser);
+
+// calling the setUser which fired off this (user) => function
+setUser({ firstName: "John", lastName: "Reilly"})
