@@ -55,7 +55,7 @@ getFullNameShorter(firstName, lastName);
 
 /*
  Default Parameters
-*/
+
 
 // if sortType has no value pass in use default 'Name'
 sortBy = (sortType = "Name", users) => {
@@ -64,3 +64,49 @@ sortBy = (sortType = "Name", users) => {
 
 sortBy(); //Passed in no value so use default `Name`
 sortBy("Date", []); //Passed in `Date` as value
+*/
+
+
+/*
+    Iterating
+*/
+
+let fruits = ["apple", "banana", "orange", "cherries", "jackfruit", "guava"];
+// console.log("For Loop");
+// for(let index = 0; index < fruits.length; index++){
+//     console.log(fruits[index]);
+// }
+
+
+// Below are different types of ES6 for loop
+
+// this loop can't really return anything here it's just a for loop
+// console.log("For-Of");
+// for(let fruit of fruits){
+//     console.log(fruit)
+// }
+
+// console.log("forEach");
+// newFruits = fruits.forEach((fruit, index) => {
+//     console.log(`${index} ${fruit}`);
+//     return fruit;
+// })
+
+
+
+
+console.log("Map");
+
+// This type of loop returns a new array
+newFruits = fruits.map((fruit) => {
+    return fruit;
+}).filter((value) => {
+    // filtering out stuff with a value banana
+    if (value == "banana") {
+        return false;
+    }else {
+        return true;
+    }
+})
+
+console.log(newFruits)
