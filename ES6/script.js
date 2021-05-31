@@ -152,7 +152,7 @@ setUser({ firstName: "John", lastName: "Reilly"})
 
 /*
     Promises
-*/
+
 
 let promise = new Promise((resolve, reject) =>{
     setTimeout(() => {
@@ -175,3 +175,38 @@ promise.then((response) => {
 })
 
 console.log("This is part 1")
+
+*/
+
+
+/*
+    Fetching data from an API
+*/
+
+// fetch data from this api
+let userPromise = fetch("https://randomuser.me/api/ERRORRERROOOREROR");
+console.log(userPromise)
+userPromise.then((response) => {
+
+    // if promise is resolve console log response in JSON format
+    //console.log(response.json()); image 1
+
+    // return response in JSON format
+    return response.json();
+
+    
+}) 
+// first then returns another promise which 
+// we have to catch right here
+.then((resData) => {
+    // console log response data image 2
+    console.log(resData)
+
+    // outputting the first and last name
+    console.log(resData.results[0].name.first);
+    console.log(resData.results[0].name.last);
+})
+.catch((error) => {
+    // console log the error response from JSON
+    console.log(error);
+})
