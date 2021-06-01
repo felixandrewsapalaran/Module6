@@ -181,10 +181,10 @@ console.log("This is part 1")
 
 /*
     Fetching data from an API
-*/
+
 
 // fetch data from this api
-let userPromise = fetch("https://randomuser.me/api/ERRORRERROOOREROR");
+let userPromise = fetch("https://randomuser.me/api/");
 console.log(userPromise)
 userPromise.then((response) => {
 
@@ -207,6 +207,13 @@ userPromise.then((response) => {
     console.log(resData.results[0].name.last);
 })
 .catch((error) => {
-    // console log the error response from JSON
+    // console log the error response
     console.log(error);
 })
+
+*/
+
+
+
+
+
