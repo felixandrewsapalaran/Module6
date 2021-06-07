@@ -47,6 +47,16 @@ console.log(getWeatherData("Union"));
 searchCity = () => {
   const city = document.getElementById('city-input').value;
   // CODE GOES HERE
+  getWeatherData(city)
+  // remember getWeatherData returns a promise
+  // here we are going to use that promise
+  .then((response) => { // this creates a response
+    console.log(response)
+  })
+  // catch any error they might be
+  .catch((error) => {
+    console.log(error)
+  })
 
 }
 
