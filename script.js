@@ -1,8 +1,8 @@
 /**
  * Weather App
  * DONE: Complete getWeatherData() to return json response Promise
- * TODO: Complete searchCity() to get user input and get data using getWeatherData()
- * TODO: Complete showWeatherData() to set the data in the the html file from response
+ * Already Done: Complete searchCity() to get user input and get data using getWeatherData()
+ * DONE: Complete showWeatherData() to set the data in the the html file from response
  */
 
 // API_KEY for maps api
@@ -38,7 +38,7 @@ getWeatherData = (city) => {
 // call the function
 //getWeatherData("Union");
 
-console.log(getWeatherData("Union"));
+// console.log(getWeatherData("Union"));
 
 /**
  * Retrieve city input and get the weather data
@@ -51,7 +51,13 @@ searchCity = () => {
   // remember getWeatherData returns a promise
   // here we are going to use that promise
   .then((response) => { // this creates a response
-    console.log(response)
+
+    // so we can see what data we are working on
+    console.log(response);
+
+    // calling this function so we can see the response
+    showWeatherData(response)
+    //console.log(response)
   })
   // catch any error they might be
   .catch((error) => {
@@ -66,6 +72,23 @@ searchCity = () => {
  */
 showWeatherData = (weatherData) => {
   //CODE GOES HERE
+  
+  // this display the city name on the page
+  document.getElementById("city-name").innerText = weatherData.name;
+
+  // display the weather type
+  document.getElementById("weather-type").innerText = weatherData.weather[0].main; 
+
+  // display the current temperature
+  document.getElementById("temp").innerText = weatherData.main.temp;
+
+  // display the minimum temperature
+  document.getElementById("min-temp").innerText = weatherData.main.temp_min;
+
+
+  // display the max temperature
+  document.getElementById("max-temp").innerText = weatherData.main.temp_max;
+
   
 }
 
